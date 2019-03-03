@@ -3,7 +3,9 @@
 ## Requirements
 
 bison (GNU Bison) >= 3.0.4
+
 flex >= 2.5.37
+
 gcc >= 4.8.5
 
 ## How2Use
