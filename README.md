@@ -2,11 +2,11 @@
 
 ## Requirements
 
-bison (GNU Bison) >= 3.0.4
+bison (GNU Bison) == 3.0.4
 
-flex >= 2.5.37
+flex == 2.5.37
 
-gcc >= 4.8.5
+gcc == 4.8.5
 
 ## How2Use
 
@@ -17,4 +17,9 @@ $> make clean
 $> make
 ```
 
-The executable is ``./token``. Options include: "-I"/"--input" (input file), "-O"/"--input" (output file).
+The executable is ``./token``. Options include：
+
+```
+"-I"/"--input"		input file, default as stdin
+"-O"/"--input"		output file, default as stdout
+```
