@@ -17,4 +17,4 @@ $> make clean
 $> make
 ```
 
-The executable is ``./token``. Options are: "-I"/"--input" (input file), "-O"/"--input" (output file).
+The executable is ``./token``. Options include: "-I"/"--input" (input file), "-O"/"--input" (output file).
