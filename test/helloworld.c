@@ -1,12 +1,14 @@
 #include <stdio.h>
 
+void some_function(int*);
+
 int main()
 {
-	printf("Hello World!");
+	some_function("hello world!");
 	return 0;
 }
 
-void haha(int *a) {
+void some_function(int *a) {
 	printf("%d\n", *a);
 	return;
 }

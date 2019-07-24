@@ -114,6 +114,29 @@ When parsing this C file, macros are removed first. Then the parsing tree looks 
 ```
 [*] translation unit
 	[*] <external_declaration>
+		[*] <declaration>
+			[*] <declaration_specifiers>
+				[*] <type_specifier>
+					[#] [void]
+			[*] <init_declarator_list>
+				[*] <init_declarator>
+					[*] <declarator>
+						[*] <direct_declarator>
+							[*] <direct_declarator>
+								[#] [some_function]
+							[#] [(]
+							[*] <parameter_type_list>
+								[*] <parameter_list>
+									[*] <parameter_declaration>
+										[*] <declaration_specifiers>
+											[*] <type_specifier>
+												[#] [int]
+										[*] <abstract_declarator>
+											[*] <pointer>
+												[#] [*]
+							[#] [)]
+			[#] [;]
+	[*] <external_declaration>
 		[*] <function_definition>
 			[*] <declaration_specifiers>
 				[*] <type_specifier>
@@ -123,6 +146,100 @@ When parsing this C file, macros are removed first. Then the parsing tree looks 
 					[*] <direct_declarator>
 						[#] [main]
 					[#] [(]
+					[#] [)]
+			[*] <compound_statement>
+				[#] [{]
+				[*] <block_item_list>
+					[*] <block_item>
+						[*] <statement>
+							[*] <expression_statement>
+								[*] <expression>
+									[*] <assignment_expression>
+										[*] <conditional_expression>
+											[*] <logical_or_expression>
+												[*] <logical_and_expression>
+													[*] <inclusive_or_expression>
+														[*] <exclusive_or_expression>
+															[*] <and_expression>
+																[*] <equality_expression>
+																	[*] <relational_expression>
+																		[*] <shift_expression>
+																			[*] <additive_expression>
+																				[*] <multiplicative_expression>
+																					[*] <cast_expression>
+																						[*] <unary_expression>
+																							[*] <postfix_expression>
+																								[*] <postfix_expression>
+																									[*] <primary_expression>
+																										[#] [some_function]
+																								[#] [(]
+																								[*] <argument_expression_list>
+																									[*] <assignment_expression>
+																										[*] <conditional_expression>
+																											[*] <logical_or_expression>
+																												[*] <logical_and_expression>
+																													[*] <inclusive_or_expression>
+																														[*] <exclusive_or_expression>
+																															[*] <and_expression>
+																																[*] <equality_expression>
+																																	[*] <relational_expression>
+																																		[*] <shift_expression>
+																																			[*] <additive_expression>
+																																				[*] <multiplicative_expression>
+																																					[*] <cast_expression>
+																																						[*] <unary_expression>
+																																							[*] <postfix_expression>
+																																								[*] <primary_expression>
+																																									[*] <string>
+																																										[#] ["hello world!"]
+																								[#] [)]
+								[#] [;]
+					[*] <block_item>
+						[*] <statement>
+							[*] <jump_statement>
+								[#] [return]
+								[*] <expression>
+									[*] <assignment_expression>
+										[*] <conditional_expression>
+											[*] <logical_or_expression>
+												[*] <logical_and_expression>
+													[*] <inclusive_or_expression>
+														[*] <exclusive_or_expression>
+															[*] <and_expression>
+																[*] <equality_expression>
+																	[*] <relational_expression>
+																		[*] <shift_expression>
+																			[*] <additive_expression>
+																				[*] <multiplicative_expression>
+																					[*] <cast_expression>
+																						[*] <unary_expression>
+																							[*] <postfix_expression>
+																								[*] <primary_expression>
+																									[*] <constant>
+																										[#] [0]
+								[#] [;]
+				[#] [}]
+	[*] <external_declaration>
+		[*] <function_definition>
+			[*] <declaration_specifiers>
+				[*] <type_specifier>
+					[#] [void]
+			[*] <declarator>
+				[*] <direct_declarator>
+					[*] <direct_declarator>
+						[#] [some_function]
+					[#] [(]
+					[*] <parameter_type_list>
+						[*] <parameter_list>
+							[*] <parameter_declaration>
+								[*] <declaration_specifiers>
+									[*] <type_specifier>
+										[#] [int]
+								[*] <declarator>
+									[*] <pointer>
+										[#] [*]
+									[*] <direct_declarator>
+										[#] [a]
 					[#] [)]
 			[*] <compound_statement>
 				[#] [{]
@@ -159,4 +276,44 @@ When parsing this C file, macros are removed first. Then the parsing tree looks 
 																														[*] <exclusive_or_expression>
 																															[*] <and_expression>
 																																[*] <equality_expression>
+																																	[*] <relational_expression>
+																																		[*] <shift_expression>
+																																			[*] <additive_expression>
+																																				[*] <multiplicative_expression>
+																																					[*] <cast_expression>
+																																						[*] <unary_expression>
+																																							[*] <postfix_expression>
+																																								[*] <primary_expression>
+																																									[*] <string>
+																																										[#] ["%d\n"]
+																									[#] [,]
+																									[*] <assignment_expression>
+																										[*] <conditional_expression>
+																											[*] <logical_or_expression>
+																												[*] <logical_and_expression>
+																													[*] <inclusive_or_expression>
+																														[*] <exclusive_or_expression>
+																															[*] <and_expression>
+																																[*] <equality_expression>
+																																	[*] <relational_expression>
+																																		[*] <shift_expression>
+																																			[*] <additive_expression>
+																																				[*] <multiplicative_expression>
+																																					[*] <cast_expression>
+																																						[*] <unary_expression>
+																																							[*] <unary_operator>
+																																								[#] [*]
+																																							[*] <cast_expression>
+																																								[*] <unary_expression>
+																																									[*] <postfix_expression>
+																																										[*] <primary_expression>
+																																											[#] [a]
+																								[#] [)]
+								[#] [;]
+					[*] <block_item>
+						[*] <statement>
+							[*] <jump_statement>
+								[#] [return]
+								[#] [;]
+				[#] [}]
 ```

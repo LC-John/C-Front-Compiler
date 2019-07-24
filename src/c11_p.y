@@ -1091,7 +1091,7 @@ translation_unit
 		root->addChild($1);
 	}
 	| translation_unit external_declaration	{
-		$$ = $1; $$->addChild($2);
+		root->addChild($2);
 	}
 	;
 
