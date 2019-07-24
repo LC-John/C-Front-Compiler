@@ -18,3 +18,8 @@ $> make
 ```
 
 The executable is ``./token``. The first argument is the input file path, and the second is the output file path.
+
+```
+$> ./token -I {InputFile} -O {OutputFile}
+$> ./tree -I {InputFile} > {OutputFile}
+```
