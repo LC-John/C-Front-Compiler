@@ -112,7 +112,7 @@ return
 When parsing this C file, macros are removed first. Then the parsing tree looks like this:
 
 ```
-[*] translation unit
+[*] <translation unit>
   [*] <external_declaration>
     [*] <declaration>
       [*] <declaration_specifiers>
