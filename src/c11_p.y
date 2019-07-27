@@ -1087,7 +1087,7 @@ jump_statement
 
 translation_unit
 	: external_declaration	{
-		root = new TreeNode(Non, "translation unit");
+		root = new TreeNode(Non, "<translation_unit>");
 		root->addChild($1);
 	}
 	| translation_unit external_declaration	{
